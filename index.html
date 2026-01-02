@@ -3,78 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mikefri | Développeur Web & Outils Fun</title>
+    <title>mikefri | 2026 Portfolio</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background: #121212; color: #e0e0e0; line-height: 1.6; }
-        header { background: #1f1f1f; padding: 60px 20px; text-align: center; }
-        h1 { font-size: 3em; margin: 0; }
-        h2 { color: #bb86fc; text-align: center; padding: 40px 0 20px; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .project-card { background: #1e1e1e; border-radius: 12px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); transition: transform 0.3s; }
-        .project-card:hover { transform: translateY(-10px); }
-        .project-card h3 { margin: 0 0 10px; color: #03dac6; }
-        .lang { font-size: 0.9em; color: #888; }
-        a { color: #bb86fc; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        footer { text-align: center; padding: 40px; background: #1f1f1f; margin-top: 60px; }
-        .badge { display: inline-block; padding: 4px 8px; background: #333; border-radius: 4px; margin-right: 5px; }
+        :root {
+            --primary: #00ffea;
+            --accent: #ff00aa;
+            --bg-start: #0f0f1e;
+            --bg-end: #1a0033;
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+        body { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, var(--bg-start), var(--bg-end)); color: #fff; overflow-x: hidden; min-height: 100vh; }
+        canvas { position: fixed; top: 0; left: 0; z-index: -1; }
+        header { text-align: center; padding: 120px 20px 80px; position: relative; }
+        h1 { font-size: 5rem; margin: 0; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: gradient 8s linear infinite; }
+        @keyframes gradient { 0% { background-position: 0%; } 100% { background-position: 100%; } }
+        header p { font-size: 1.5rem; opacity: 0.9; max-width: 800px; margin: 20px auto; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        h2 { font-size: 3rem; text-align: center; margin-bottom: 60px; color: var(--primary); }
+        .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .project-card {
+            background: var(--glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .project-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(0, 255, 234, 0.2);
+            border-color: var(--primary);
+        }
+        .project-card h3 { font-size: 1.8rem; margin: 0 0 15px; color: var(--primary); }
+        .project-card p { opacity: 0.9; }
+        .links a { color: var(--primary); text-decoration: none; margin-right: 15px; font-weight: bold; }
+        .links a:hover { text-decoration: underline; }
+        footer { text-align: center; padding: 60px; opacity: 0.7; font-size: 0.9rem; }
+        @media (max-width: 768px) { h1 { font-size: 3.5rem; } }
     </style>
 </head>
 <body>
+    <canvas id="particles"></canvas>
+
     <header>
-        <div class="container">
-            <h1>mikefri</h1>
-            <p>Développeur web passionné | Outils gratuits en HTML/JS/CSS | Fan Tesla & utilitaires fun</p>
-            <p><a href="https://github.com/mikefri" target="_blank">GitHub</a> • Contact : tonemail@example.com (ajoute le tien !)</p>
-        </div>
+        <h1>mikefri</h1>
+        <p>Développeur web créatif • Outils open-source fun & utiles • Passion Tesla + JS pur • 2026 vibes</p>
+        <p><a href="https://github.com/mikefri" style="color: var(--primary);">GitHub</a> • Ajoute ton contact ici !</p>
     </header>
 
-    <section class="container">
+    <div class="container">
         <h2>Mes Projets</h2>
         <div class="projects">
             <div class="project-card">
                 <h3>Teslatv</h3>
-                <p>Interface TV & Media Player web pour Tesla (S/3/X/Y). Support HLS/M3U8, navigation par gestes et mode plein écran optimisé.</p>
-                <p class="lang">JavaScript <span class="badge">★ 2</span></p>
-                <a href="https://github.com/mikefri/Teslatv" target="_blank">Voir sur GitHub</a> • 
-                <a href="https://mikefri.github.io/Teslatv/" target="_blank">Démo live (si déployé)</a>
+                <p>Media Player web optimisé pour Tesla (S/3/X/Y) • HLS/M3U8 • Gestes & plein écran</p>
+                <div class="links">
+                    <a href="https://github.com/mikefri/Teslatv" target="_blank">GitHub</a>
+                    <a href="https://mikefri.github.io/Teslatv/" target="_blank">Démo</a>
+                </div>
             </div>
 
             <div class="project-card">
                 <h3>GenCodeBarre</h3>
-                <p>Générateur web gratuit de codes-barres et QR Codes, 100% client-side (JavaScript pur). Fonctionne sans serveur !</p>
-                <p class="lang">CSS <span class="badge">★ 1</span></p>
-                <a href="https://github.com/mikefri/GenCodeBarre" target="_blank">Voir sur GitHub</a>
+                <p>Générateur QR & codes-barres 100% client-side • Gratuit • Sans serveur</p>
+                <div class="links"><a href="https://github.com/mikefri/GenCodeBarre" target="_blank">GitHub</a></div>
             </div>
 
             <div class="project-card">
                 <h3>TeslaGame</h3>
-                <p>Dashboard interactif pour Tesla (2026) avec jeux (CandyCrush, Solitaire) et interface optimisée natif via redirection.</p>
-                <p class="lang">HTML <span class="badge">★ 1</span></p>
-                <a href="https://github.com/mikefri/TeslaGame" target="_blank">Voir sur GitHub</a>
+                <p>Dashboard interactif Tesla 2026 • Jeux intégrés (Candy Crush, Solitaire)</p>
+                <div class="links"><a href="https://github.com/mikefri/TeslaGame" target="_blank">GitHub</a></div>
             </div>
 
             <div class="project-card">
                 <h3>RadiosWeb</h3>
-                <p>Application web légère pour accéder à vos radios préférées en un clic, partout et sans support n'importe quoi.</p>
-                <p class="lang">HTML <span class="badge">★ 1</span></p>
-                <a href="https://github.com/mikefri/RadiosWeb" target="_blank">Voir sur GitHub</a>
+                <p>App web légère pour radios préférées • Un clic partout</p>
+                <div class="links"><a href="https://github.com/mikefri/RadiosWeb" target="_blank">GitHub</a></div>
             </div>
 
             <div class="project-card">
                 <h3>Convertisseurs</h3>
-                <p>Studio gratuit en ligne pour retoucher et convertir images & audio, sans serveur. Détourage intelligent fond transparent en 1 clic !</p>
-                <p class="lang">HTML</p>
-                <a href="https://github.com/mikefri/Convertisseurs" target="_blank">Voir sur GitHub</a>
+                <p>Studio en ligne gratuit • Retouche images/audio • Détourage IA 1-clic</p>
+                <div class="links"><a href="https://github.com/mikefri/Convertisseurs" target="_blank">GitHub</a></div>
             </div>
 
-            <!-- Ajoute d'autres projets ici en copiant le bloc -->
+            <!-- Ajoute tes autres projets ici ! -->
         </div>
-    </section>
+    </div>
 
     <footer>
-        <p>© 2026 mikefri • Tous les projets sont open-source et gratuits ❤️</p>
+        © 2026 mikefri • Open-source avec ❤️ • Futuriste mais accessible
     </footer>
+
+    <script>
+        // Particles background simple & lightweight
+        const canvas = document.getElementById('particles');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const particles = [];
+        for (let i = 0; i < 80; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                radius: Math.random() * 2 + 1,
+                speed: Math.random() * 0.5 + 0.2
+            });
+        }
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(0, 255, 234, 0.5)';
+                ctx.fill();
+                p.y -= p.speed;
+                if (p.y < 0) p.y = canvas.height;
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+        // Suivi souris optionnel pour plus d'interaction (décommente si tu veux)
+        // window.addEventListener('mousemove', e => { /* effet follow */ });
+    </script>
 </body>
 </html>
