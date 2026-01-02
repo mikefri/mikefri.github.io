@@ -6,14 +6,63 @@
     <title>mikefri | 2026 Portfolio</title>
     <script src="https://cdn.jsdelivr.net/npm/three@0.168.0/build/three.min.js"></script>
     <style>
-        body { margin: 0; overflow: hidden; background: #000; color: #fff; font-family: 'Segoe UI', sans-serif; }
-        #hero3d { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
-        .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; }
-        h1 { font-size: 6rem; margin: 0; background: linear-gradient(90deg, #00ffea, #ff00aa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        header p { font-size: 1.8rem; opacity: 0.9; max-width: 800px; margin: 20px auto; }
-        .container { position: relative; z-index: 1; max-width: 1200px; margin: 120px auto 60px; padding: 20px; }
-        h2 { text-align: center; font-size: 3rem; color: #00ffea; margin-bottom: 60px; }
-        .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 40px; perspective: 1200px; }
+        body { 
+            margin: 0; 
+            overflow: hidden; 
+            background: #000; 
+            color: #fff; 
+            font-family: 'Segoe UI', sans-serif; 
+        }
+        #hero3d { 
+            position: fixed; 
+            top: 0; left: 0; 
+            width: 100%; height: 100%; 
+            z-index: -1; 
+        }
+        .overlay { 
+            position: absolute; 
+            top: 0; left: 0; 
+            width: 100%; height: 100%; 
+            pointer-events: none; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+            padding: 20px; 
+        }
+        h1 { 
+            font-size: 6rem; 
+            margin: 0; 
+            background: linear-gradient(90deg, #00ffea, #ff00aa); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
+        .overlay p { 
+            font-size: 1.8rem; 
+            opacity: 0.9; 
+            max-width: 800px; 
+            margin: 20px auto; 
+        }
+        .container { 
+            position: relative; 
+            z-index: 1; 
+            max-width: 1200px; 
+            margin: 120px auto 60px; 
+            padding: 20px; 
+        }
+        h2 { 
+            text-align: center; 
+            font-size: 3rem; 
+            color: #00ffea; 
+            margin-bottom: 60px; 
+        }
+        .projects { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
+            gap: 40px; 
+            perspective: 1200px; 
+        }
         .project-card { 
             background: rgba(255,255,255,0.06); 
             backdrop-filter: blur(20px); 
@@ -29,17 +78,59 @@
             box-shadow: 0 25px 60px rgba(0, 255, 234, 0.35); 
             border-color: #00ffea;
         }
-        .project-card h3 { font-size: 1.9rem; color: #00ffea; margin: 0 0 15px; }
-        .project-card p { opacity: 0.9; margin-bottom: 20px; }
-        .links { font-size: 1.1rem; }
-        .links a { color: #ff00aa; text-decoration: none; margin-right: 20px; font-weight: bold; }
-        .links a:hover { color: #00ffea; text-decoration: underline; }
-        footer { text-align: center; padding: 60px; opacity: 0.8; position: relative; z-index: 1; }
-        @media (max-width: 768px) { h1 { font-size: 4rem; } .projects { grid-template-columns: 1fr; } }
+        .project-card h3 { 
+            font-size: 1.9rem; 
+            color: #00ffea; 
+            margin: 0 0 15px; 
+        }
+        .project-card p { 
+            opacity: 0.9; 
+            margin-bottom: 20px; 
+        }
+        .links { 
+            font-size: 1.1rem; 
+        }
+        .links a { 
+            color: #ff00aa; 
+            text-decoration: none; 
+            margin-right: 20px; 
+            font-weight: bold; 
+        }
+        .links a:hover { 
+            color: #00ffea; 
+            text-decoration: underline; 
+        }
+        footer { 
+            text-align: center; 
+            padding: 80px 20px 60px; 
+            opacity: 0.9; 
+            position: relative; 
+            z-index: 1; 
+        }
+        .kofi-btn { 
+            margin-top: 20px; 
+            display: inline-block; 
+            opacity: 0.9; 
+            transition: opacity 0.3s; 
+        }
+        .kofi-btn:hover { 
+            opacity: 1; 
+        }
+        .kofi-btn img { 
+            height: 48px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 15px rgba(0,255,234,0.2); 
+        }
+        @media (max-width: 768px) { 
+            h1 { font-size: 4rem; } 
+            .overlay p { font-size: 1.4rem; }
+            .projects { grid-template-columns: 1fr; } 
+        }
     </style>
 </head>
 <body>
     <div id="hero3d"></div>
+
     <div class="overlay">
         <h1>mikefri</h1>
         <p>Développeur web passionné • Outils open-source & Tesla-focused • JS pur • 2026</p>
@@ -93,13 +184,16 @@
                     <a href="https://mikefri.github.io/Convertisseurs/" target="_blank">Démo Live</a>
                 </div>
             </div>
-
-            <!-- Ajoute d'autres si tu en as plus (ex: RadiosWebMP3, etc.) -->
         </div>
     </div>
 
     <footer>
-        © 2026 mikefri • Tous les projets sont open-source et gratuits ❤️ • Made with Three.js
+        © 2026 mikefri • Tous les projets sont open-source et gratuits ❤️ • Made with Three.js<br>
+        <div class="kofi-btn">
+            <a href="https://ko-fi.com/mikefri" target="_blank" title="Offre-moi un café pour soutenir les projets ! ☕">
+                <img src="https://cdn.prod.website-files.com/5c14e387dab576fe667689cf/670f5a010d6b437c09864f24_support_me_on_kofi_badge_dark.png" alt="Buy Me a Coffee at ko-fi.com">
+            </a>
+        </div>
     </footer>
 
     <script>
@@ -119,7 +213,7 @@
         const particlesGeo = new THREE.BufferGeometry();
         const particlesCnt = 5000;
         const posArray = new Float32Array(particlesCnt * 3);
-        for(let i = 0; i < particlesCnt * 3; i++) {
+        for (let i = 0; i < particlesCnt * 3; i++) {
             posArray[i] = (Math.random() - 0.5) * 50;
         }
         particlesGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
