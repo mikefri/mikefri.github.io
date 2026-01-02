@@ -3,76 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mikefri | 2026 Portfolio</title>
+    <title>mikefri | 2026 Portfolio</title>
     <style>
         body { 
             margin: 0; 
-            background: linear-gradient(135deg, #000, #0f0020); 
-            color: #fff; 
+            background: #faf8f5; /* Crème pastel clair, très doux */
+            color: #555; 
             font-family: 'Segoe UI', sans-serif; 
             min-height: 100vh; 
-            position: relative; 
-            overflow-x: hidden;
         }
-        #particles { 
-            position: fixed; 
-            top: 0; left: 0; 
-            width: 100%; height: 100%; 
-            pointer-events: none; 
-            z-index: -1; 
-            background: transparent; 
-        }
-        .particle { 
-            position: absolute; 
-            background: #fff; 
-            border-radius: 50%; 
-            animation: float 20s linear infinite; 
-            opacity: 0.5; 
-        }
-        @keyframes float { 
-            0% { transform: translateY(0); } 
-            100% { transform: translateY(-100vh); } 
-        }
-        .overlay { 
+        .hero { 
             text-align: center; 
-            padding: 120px 20px 80px; 
-            position: relative; 
-            z-index: 1; 
+            padding: 140px 20px 100px; 
+            background: linear-gradient(135deg, #e0f2fe 0%, #fce7f3 100%); /* Gradient pastel bleu-rose subtil */
         }
         h1 { 
             font-size: 6rem; 
             margin: 0; 
-            background: linear-gradient(90deg, #00ffea, #ff00aa); 
+            background: linear-gradient(90deg, #a78bfa, #ec4899); /* Violet lavande → rose poudré */
             -webkit-background-clip: text; 
             -webkit-text-fill-color: transparent; 
-            animation: gradient 8s linear infinite; 
         }
-        @keyframes gradient { 0% { background-position: 0%; } 100% { background-position: 200%; } }
-        .overlay p { font-size: 1.8rem; opacity: 0.9; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 1; }
-        h2 { text-align: center; font-size: 3rem; color: #00ffea; margin-bottom: 60px; }
-        .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 40px; }
-        .project-card { background: rgba(255,255,255,0.06); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.12); border-radius: 24px; padding: 35px; transition: all 0.5s ease; }
-        .project-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0, 255, 234, 0.3); border-color: #00ffea; }
-        .project-card h3 { font-size: 1.9rem; color: #00ffea; margin: 0 0 15px; }
-        .project-card p { opacity: 0.9; margin-bottom: 20px; }
-        .links a { color: #ff00aa; text-decoration: none; margin-right: 20px; font-weight: bold; }
-        .links a:first-child { color: #00ffea; }
+        .hero p { 
+            font-size: 1.8rem; 
+            opacity: 0.8; 
+            max-width: 800px; 
+            margin: 30px auto; 
+            color: #666; 
+        }
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 20px; 
+        }
+        h2 { 
+            text-align: center; 
+            font-size: 3rem; 
+            color: #818cf8; /* Indigo pastel */
+            margin-bottom: 60px; 
+        }
+        .projects { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
+            gap: 40px; 
+        }
+        .project-card { 
+            background: rgba(255, 255, 255, 0.7); 
+            backdrop-filter: blur(15px); 
+            border: 1px solid rgba(255, 255, 255, 0.8); 
+            border-radius: 28px; 
+            padding: 40px; 
+            transition: all 0.4s ease; 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); 
+        }
+        .project-card:hover { 
+            transform: translateY(-15px); 
+            box-shadow: 0 20px 50px rgba(129, 140, 248, 0.15); /* Glow indigo pastel */
+        }
+        .project-card h3 { 
+            font-size: 1.9rem; 
+            color: #818cf8; /* Indigo pastel */
+            margin: 0 0 15px; 
+        }
+        .project-card p { 
+            opacity: 0.8; 
+            margin-bottom: 25px; 
+            color: #666; 
+        }
+        .links a { 
+            color: #ec4899; /* Rose poudré */
+            text-decoration: none; 
+            margin-right: 25px; 
+            font-weight: bold; 
+        }
+        .links a:first-child { color: #60a5fa; /* Bleu pastel clair */ }
         .links a:hover { text-decoration: underline; }
-        footer { text-align: center; padding: 80px 20px; opacity: 0.9; position: relative; z-index: 1; }
-        .kofi-btn { margin-top: 20px; display: inline-block; }
-        .kofi-btn img { height: 48px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,255,234,0.2); }
-        @media (max-width: 768px) { h1 { font-size: 4rem; } .overlay p { font-size: 1.4rem; } .projects { grid-template-columns: 1fr; } }
+        footer { 
+            text-align: center; 
+            padding: 100px 20px 60px; 
+            opacity: 0.8; 
+            color: #888; 
+        }
+        .kofi-btn { 
+            margin-top: 20px; 
+            display: inline-block; 
+        }
+        .kofi-btn img { 
+            height: 48px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 15px rgba(236, 72, 153, 0.15); /* Glow rose pastel */
+        }
+        @media (max-width: 768px) { 
+            h1 { font-size: 4rem; } 
+            .hero p { font-size: 1.4rem; } 
+            .projects { grid-template-columns: 1fr; } 
+        }
     </style>
 </head>
 <body>
-    <div id="particles"></div>
-
-    <div class="overlay">
+    <section class="hero">
         <h1>mikefri</h1>
         <p>Développeur web passionné • Outils open-source & Tesla-focused • JS pur • 2026</p>
-        <p><a href="https://github.com/mikefri" style="color:#00ffea; font-size:1.2rem;">GitHub</a></p>
-    </div>
+        <p><a href="https://github.com/mikefri" style="color:#818cf8; font-size:1.2rem;">GitHub</a></p>
+    </section>
 
     <div class="container">
         <h2>Mes Projets Open-Source</h2>
@@ -127,26 +160,12 @@
     </div>
 
     <footer>
-        © 2026 Mikefri • Tous les projets sont open-source et gratuits ❤️
+        © 2026 mikefri • Tous les projets sont open-source et gratuits ❤️<br>
         <div class="kofi-btn">
-            <a href="https://ko-fi.com/mikefri" target="_blank" title="Offre-moi un café pour booster les projets ! ☕">
+            <a href="https://ko-fi.com/mikefri" target="_blank" title="Offre-moi un café pour soutenir les projets ! ☕">
                 <img src="https://cdn.prod.website-files.com/5c14e387dab576fe667689cf/670f5a010d6b437c09864f24_support_me_on_kofi_badge_dark.png" alt="Buy Me a Coffee on Ko-fi">
             </a>
         </div>
     </footer>
-
-    <script>
-        // Particules CSS simples
-        const particlesContainer = document.getElementById('particles');
-        for (let i = 0; i < 100; i++) {
-            const particle = document.createElement('div');
-            particle.classList.add('particle');
-            particle.style.width = particle.style.height = `${Math.random() * 3 + 1}px`;
-            particle.style.left = `${Math.random() * 100}%`;
-            particle.style.animationDuration = `${Math.random() * 20 + 10}s`;
-            particle.style.animationDelay = `${Math.random() * 10}s`;
-            particlesContainer.appendChild(particle);
-        }
-    </script>
 </body>
 </html>
