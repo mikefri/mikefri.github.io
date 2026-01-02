@@ -6,135 +6,35 @@
     <title>mikefri | 2026 Portfolio</title>
     <script src="https://cdn.jsdelivr.net/npm/three@0.168.0/build/three.min.js"></script>
     <style>
-        body { 
-            margin: 0; 
-            overflow: hidden; 
-            background: #000; 
-            color: #fff; 
-            font-family: 'Segoe UI', sans-serif; 
-        }
-        #hero3d { 
-            position: fixed; 
-            top: 0; left: 0; 
-            width: 100%; height: 100%; 
-            z-index: -1; 
-        }
-        .overlay { 
-            position: absolute; 
-            top: 0; left: 0; 
-            width: 100%; height: 100%; 
-            pointer-events: none; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center; 
-            text-align: center; 
-            padding: 20px; 
-        }
-        h1 { 
-            font-size: 6rem; 
-            margin: 0; 
-            background: linear-gradient(90deg, #00ffea, #ff00aa); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
-        }
-        .overlay p { 
-            font-size: 1.8rem; 
-            opacity: 0.9; 
-            max-width: 800px; 
-            margin: 20px auto; 
-        }
-        .container { 
-            position: relative; 
-            z-index: 1; 
-            max-width: 1200px; 
-            margin: 120px auto 60px; 
-            padding: 20px; 
-        }
-        h2 { 
-            text-align: center; 
-            font-size: 3rem; 
-            color: #00ffea; 
-            margin-bottom: 60px; 
-        }
-        .projects { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
-            gap: 40px; 
-            perspective: 1200px; 
-        }
-        .project-card { 
-            background: rgba(255,255,255,0.06); 
-            backdrop-filter: blur(20px); 
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255,255,255,0.12); 
-            border-radius: 24px; 
-            padding: 35px; 
-            transition: all 0.5s ease; 
-            cursor: pointer;
-        }
-        .project-card:hover { 
-            transform: rotateY(12deg) rotateX(8deg) translateZ(60px); 
-            box-shadow: 0 25px 60px rgba(0, 255, 234, 0.35); 
-            border-color: #00ffea;
-        }
-        .project-card h3 { 
-            font-size: 1.9rem; 
-            color: #00ffea; 
-            margin: 0 0 15px; 
-        }
-        .project-card p { 
-            opacity: 0.9; 
-            margin-bottom: 20px; 
-        }
-        .links { 
-            font-size: 1.1rem; 
-        }
-        .links a { 
-            color: #ff00aa; 
-            text-decoration: none; 
-            margin-right: 20px; 
-            font-weight: bold; 
-        }
-        .links a:hover { 
-            color: #00ffea; 
-            text-decoration: underline; 
-        }
-        footer { 
-            text-align: center; 
-            padding: 80px 20px 60px; 
-            opacity: 0.9; 
-            position: relative; 
-            z-index: 1; 
-        }
-        .kofi-btn { 
-            margin-top: 20px; 
-            display: inline-block; 
-            opacity: 0.9; 
-            transition: opacity 0.3s; 
-        }
-        .kofi-btn:hover { 
-            opacity: 1; 
-        }
-        .kofi-btn img { 
-            height: 48px; 
-            border-radius: 12px; 
-            box-shadow: 0 4px 15px rgba(0,255,234,0.2); 
-        }
-        @media (max-width: 768px) { 
-            h1 { font-size: 4rem; } 
-            .overlay p { font-size: 1.4rem; }
-            .projects { grid-template-columns: 1fr; } 
-        }
+        body { margin: 0; overflow: hidden; background: #000; color: #fff; font-family: 'Segoe UI', sans-serif; height: 100vh; }
+        #hero3d { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+        .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; z-index: 1; }
+        h1 { font-size: 6rem; margin: 0; background: linear-gradient(90deg, #00ffea, #ff00aa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .overlay p { font-size: 1.8rem; opacity: 0.9; max-width: 800px; margin: 20px auto; }
+        .container { position: relative; z-index: 2; max-width: 1200px; margin: 120px auto 60px; padding: 20px; }
+        h2 { text-align: center; font-size: 3rem; color: #00ffea; margin-bottom: 60px; }
+        .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 40px; perspective: 1200px; }
+        .project-card { background: rgba(255,255,255,0.06); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.12); border-radius: 24px; padding: 35px; transition: all 0.5s ease; cursor: pointer; }
+        .project-card:hover { transform: rotateY(12deg) rotateX(8deg) translateZ(60px); box-shadow: 0 25px 60px rgba(0, 255, 234, 0.35); border-color: #00ffea; }
+        .project-card h3 { font-size: 1.9rem; color: #00ffea; margin: 0 0 15px; }
+        .project-card p { opacity: 0.9; margin-bottom: 20px; }
+        .links { font-size: 1.1rem; }
+        .links a { color: #ff00aa; text-decoration: none; margin-right: 20px; font-weight: bold; }
+        .links a:hover { color: #00ffea; text-decoration: underline; }
+        .links a:first-child { color: #00ffea; }
+        footer { text-align: center; padding: 80px 20px 60px; opacity: 0.9; position: relative; z-index: 2; }
+        .kofi-btn { margin-top: 20px; display: inline-block; }
+        .kofi-btn img { height: 48px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,255,234,0.2); }
+        @media (max-width: 768px) { h1 { font-size: 4rem; } .overlay p { font-size: 1.4rem; } .projects { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
-    <div id="hero3d"></div>
+    <canvas id="hero3d"></canvas>
 
     <div class="overlay">
         <h1>mikefri</h1>
         <p>Développeur web passionné • Outils open-source & Tesla-focused • JS pur • 2026</p>
-        <p><a href="https://github.com/mikefri" style="color:#00ffea; font-size:1.2rem;">GitHub</a></p>
+        <p><a href="https://github.com/mikefri" style="color:#00ffea; font-size:1.2rem; pointer-events: auto;">GitHub</a></p>
     </div>
 
     <div class="container">
@@ -184,38 +84,44 @@
                     <a href="https://mikefri.github.io/Convertisseurs/" target="_blank">Démo Live</a>
                 </div>
             </div>
+
+            <div class="project-card">
+                <h3>RadiosWebMP3</h3>
+                <p>Lecteur MP3 web léger et simple • Support local files • Interface minimaliste</p>
+                <div class="links">
+                    <a href="https://github.com/mikefri/RadiosWebMP3" target="_blank">GitHub</a>
+                    <a href="https://mikefri.github.io/RadiosWebMP3/" target="_blank">Démo Live</a>
+                </div>
+            </div>
         </div>
     </div>
 
     <footer>
         © 2026 mikefri • Tous les projets sont open-source et gratuits ❤️ • Made with Three.js<br>
         <div class="kofi-btn">
-            <a href="https://ko-fi.com/mikefri" target="_blank" title="Offre-moi un café pour soutenir les projets ! ☕">
-                <img src="https://cdn.prod.website-files.com/5c14e387dab576fe667689cf/670f5a010d6b437c09864f24_support_me_on_kofi_badge_dark.png" alt="Buy Me a Coffee at ko-fi.com">
+            <a href="https://ko-fi.com/mikefri" target="_blank" title="Offre-moi un café ! ☕">
+                <img src="https://cdn.prod.website-files.com/5c14e387dab576fe667689cf/670f5a010d6b437c09864f24_support_me_on_kofi_badge_dark.png" alt="Ko-fi">
             </a>
         </div>
     </footer>
 
     <script>
+        const canvas = document.getElementById('hero3d');
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
-        document.getElementById('hero3d').appendChild(renderer.domElement);
+        renderer.setPixelRatio(window.devicePixelRatio);
 
-        // Globe wireframe central
         const geometry = new THREE.SphereGeometry(5, 64, 64);
         const material = new THREE.MeshBasicMaterial({ color: 0x00ffea, wireframe: true });
         const sphere = new THREE.Mesh(geometry, material);
         scene.add(sphere);
 
-        // Particules étoiles
         const particlesGeo = new THREE.BufferGeometry();
         const particlesCnt = 5000;
         const posArray = new Float32Array(particlesCnt * 3);
-        for (let i = 0; i < particlesCnt * 3; i++) {
-            posArray[i] = (Math.random() - 0.5) * 50;
-        }
+        for (let i = 0; i < particlesCnt * 3; i++) posArray[i] = (Math.random() - 0.5) * 50;
         particlesGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
         const particlesMat = new THREE.PointsMaterial({ color: 0xffffff, size: 0.05 });
         const particles = new THREE.Points(particlesGeo, particlesMat);
