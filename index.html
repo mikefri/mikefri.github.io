@@ -7,30 +7,34 @@
     <style>
         body { 
             margin: 0; 
-            background: #faf8f5; /* Crème pastel clair, très doux */
-            color: #555; 
+            background: #fff; /* Blanc pur */
+            color: #444; 
             font-family: 'Segoe UI', sans-serif; 
             min-height: 100vh; 
         }
         .hero { 
             text-align: center; 
-            padding: 140px 20px 100px; 
-            background: linear-gradient(135deg, #e0f2fe 0%, #fce7f3 100%); /* Gradient pastel bleu-rose subtil */
+            padding: 80px 20px 60px; /* Réduit fortement */
+            background: linear-gradient(135deg, #f0f9ff 0%, #fff5fb 100%); /* Pastel très léger bleu/rose */
         }
         h1 { 
-            font-size: 6rem; 
-            margin: 0; 
-            background: linear-gradient(90deg, #a78bfa, #ec4899); /* Violet lavande → rose poudré */
+            font-size: 5rem; /* Un peu réduit pour compacité */
+            margin: 0 0 20px; 
+            background: linear-gradient(90deg, #a78bfa, #ec4899); 
             -webkit-background-clip: text; 
             -webkit-text-fill-color: transparent; 
         }
         .hero p { 
-            font-size: 1.8rem; 
-            opacity: 0.8; 
-            max-width: 800px; 
-            margin: 30px auto; 
+            font-size: 1.4rem; 
+            margin: 0 0 20px; 
             color: #666; 
         }
+        .hero a { 
+            color: #818cf8; 
+            font-size: 1.1rem; 
+            text-decoration: none; 
+        }
+        .hero a:hover { text-decoration: underline; }
         .container { 
             max-width: 1200px; 
             margin: 0 auto; 
@@ -38,65 +42,65 @@
         }
         h2 { 
             text-align: center; 
-            font-size: 3rem; 
-            color: #818cf8; /* Indigo pastel */
-            margin-bottom: 60px; 
+            font-size: 2.6rem; 
+            color: #818cf8; 
+            margin: 40px 0 50px; /* Réduit */
         }
         .projects { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
-            gap: 40px; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 30px; /* Réduit */
         }
         .project-card { 
-            background: rgba(255, 255, 255, 0.7); 
-            backdrop-filter: blur(15px); 
-            border: 1px solid rgba(255, 255, 255, 0.8); 
-            border-radius: 28px; 
-            padding: 40px; 
+            background: rgba(255, 255, 255, 0.85); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid #e0e7ff; 
+            border-radius: 20px; 
+            padding: 30px; /* Réduit */
             transition: all 0.4s ease; 
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); 
+            box-shadow: 0 8px 25px rgba(129, 140, 248, 0.08); 
         }
         .project-card:hover { 
-            transform: translateY(-15px); 
-            box-shadow: 0 20px 50px rgba(129, 140, 248, 0.15); /* Glow indigo pastel */
+            transform: translateY(-10px); 
+            box-shadow: 0 15px 40px rgba(129, 140, 248, 0.15); 
         }
         .project-card h3 { 
-            font-size: 1.9rem; 
-            color: #818cf8; /* Indigo pastel */
-            margin: 0 0 15px; 
+            font-size: 1.7rem; 
+            color: #818cf8; 
+            margin: 0 0 12px; 
         }
         .project-card p { 
-            opacity: 0.8; 
-            margin-bottom: 25px; 
-            color: #666; 
+            font-size: 1rem; 
+            margin: 0 0 20px; 
+            color: #555; 
+            line-height: 1.5; 
         }
         .links a { 
-            color: #ec4899; /* Rose poudré */
+            color: #ec4899; 
             text-decoration: none; 
-            margin-right: 25px; 
+            margin-right: 20px; 
             font-weight: bold; 
+            font-size: 1rem; 
         }
-        .links a:first-child { color: #60a5fa; /* Bleu pastel clair */ }
+        .links a:first-child { color: #60a5fa; }
         .links a:hover { text-decoration: underline; }
         footer { 
             text-align: center; 
-            padding: 100px 20px 60px; 
-            opacity: 0.8; 
+            padding: 60px 20px 40px; /* Réduit */
             color: #888; 
-        }
-        .kofi-btn { 
-            margin-top: 20px; 
-            display: inline-block; 
+            font-size: 0.95rem; 
         }
         .kofi-btn img { 
-            height: 48px; 
-            border-radius: 12px; 
-            box-shadow: 0 4px 15px rgba(236, 72, 153, 0.15); /* Glow rose pastel */
+            height: 44px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 12px rgba(236, 72, 153, 0.1); 
         }
         @media (max-width: 768px) { 
-            h1 { font-size: 4rem; } 
-            .hero p { font-size: 1.4rem; } 
-            .projects { grid-template-columns: 1fr; } 
+            h1 { font-size: 3.8rem; } 
+            .hero { padding: 60px 20px 40px; } 
+            .hero p { font-size: 1.2rem; } 
+            .projects { grid-template-columns: 1fr; gap: 25px; } 
+            h2 { font-size: 2.2rem; margin: 30px 0 40px; }
         }
     </style>
 </head>
@@ -104,7 +108,7 @@
     <section class="hero">
         <h1>mikefri</h1>
         <p>Développeur web passionné • Outils open-source & Tesla-focused • JS pur • 2026</p>
-        <p><a href="https://github.com/mikefri" style="color:#818cf8; font-size:1.2rem;">GitHub</a></p>
+        <p><a href="https://github.com/mikefri" target="_blank">GitHub</a></p>
     </section>
 
     <div class="container">
@@ -155,15 +159,22 @@
                 </div>
             </div>
 
-            
+            <div class="project-card">
+                <h3>RadiosWebMP3</h3>
+                <p>Lecteur MP3 web léger et simple • Support local files • Interface minimaliste</p>
+                <div class="links">
+                    <a href="https://github.com/mikefri/RadiosWebMP3" target="_blank">GitHub</a>
+                    <a href="https://mikefri.github.io/RadiosWebMP3/" target="_blank">Démo Live</a>
+                </div>
+            </div>
         </div>
     </div>
 
     <footer>
         © 2026 mikefri • Tous les projets sont open-source et gratuits ❤️<br>
         <div class="kofi-btn">
-            <a href="https://ko-fi.com/mikefri" target="_blank" title="Offre-moi un café pour soutenir les projets ! ☕">
-                <img src="https://cdn.prod.website-files.com/5c14e387dab576fe667689cf/670f5a010d6b437c09864f24_support_me_on_kofi_badge_dark.png" alt="Buy Me a Coffee on Ko-fi">
+            <a href="https://ko-fi.com/mikefri" target="_blank" title="Offre-moi un café ! ☕">
+                <img src="https://cdn.prod.website-files.com/5c14e387dab576fe667689cf/670f5a010d6b437c09864f24_support_me_on_kofi_badge_dark.png" alt="Ko-fi">
             </a>
         </div>
     </footer>
