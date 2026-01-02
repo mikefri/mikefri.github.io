@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mikefri | Développeur Web & Outils Fun</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background: #121212; color: #e0e0e0; line-height: 1.6; }
+        header { background: #1f1f1f; padding: 60px 20px; text-align: center; }
+        h1 { font-size: 3em; margin: 0; }
+        h2 { color: #bb86fc; text-align: center; padding: 40px 0 20px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .project-card { background: #1e1e1e; border-radius: 12px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); transition: transform 0.3s; }
+        .project-card:hover { transform: translateY(-10px); }
+        .project-card h3 { margin: 0 0 10px; color: #03dac6; }
+        .lang { font-size: 0.9em; color: #888; }
+        a { color: #bb86fc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        footer { text-align: center; padding: 40px; background: #1f1f1f; margin-top: 60px; }
+        .badge { display: inline-block; padding: 4px 8px; background: #333; border-radius: 4px; margin-right: 5px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>mikefri</h1>
+            <p>Développeur web passionné | Outils gratuits en HTML/JS/CSS | Fan Tesla & utilitaires fun</p>
+            <p><a href="https://github.com/mikefri" target="_blank">GitHub</a> • Contact : tonemail@example.com (ajoute le tien !)</p>
+        </div>
+    </header>
+
+    <section class="container">
+        <h2>Mes Projets</h2>
+        <div class="projects">
+            <div class="project-card">
+                <h3>Teslatv</h3>
+                <p>Interface TV & Media Player web pour Tesla (S/3/X/Y). Support HLS/M3U8, navigation par gestes et mode plein écran optimisé.</p>
+                <p class="lang">JavaScript <span class="badge">★ 2</span></p>
+                <a href="https://github.com/mikefri/Teslatv" target="_blank">Voir sur GitHub</a> • 
+                <a href="https://mikefri.github.io/Teslatv/" target="_blank">Démo live (si déployé)</a>
+            </div>
+
+            <div class="project-card">
+                <h3>GenCodeBarre</h3>
+                <p>Générateur web gratuit de codes-barres et QR Codes, 100% client-side (JavaScript pur). Fonctionne sans serveur !</p>
+                <p class="lang">CSS <span class="badge">★ 1</span></p>
+                <a href="https://github.com/mikefri/GenCodeBarre" target="_blank">Voir sur GitHub</a>
+            </div>
+
+            <div class="project-card">
+                <h3>TeslaGame</h3>
+                <p>Dashboard interactif pour Tesla (2026) avec jeux (CandyCrush, Solitaire) et interface optimisée natif via redirection.</p>
+                <p class="lang">HTML <span class="badge">★ 1</span></p>
+                <a href="https://github.com/mikefri/TeslaGame" target="_blank">Voir sur GitHub</a>
+            </div>
+
+            <div class="project-card">
+                <h3>RadiosWeb</h3>
+                <p>Application web légère pour accéder à vos radios préférées en un clic, partout et sans support n'importe quoi.</p>
+                <p class="lang">HTML <span class="badge">★ 1</span></p>
+                <a href="https://github.com/mikefri/RadiosWeb" target="_blank">Voir sur GitHub</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Convertisseurs</h3>
+                <p>Studio gratuit en ligne pour retoucher et convertir images & audio, sans serveur. Détourage intelligent fond transparent en 1 clic !</p>
+                <p class="lang">HTML</p>
+                <a href="https://github.com/mikefri/Convertisseurs" target="_blank">Voir sur GitHub</a>
+            </div>
+
+            <!-- Ajoute d'autres projets ici en copiant le bloc -->
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 mikefri • Tous les projets sont open-source et gratuits ❤️</p>
+    </footer>
+</body>
+</html>
